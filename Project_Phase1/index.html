@@ -8,11 +8,11 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
 
-  <body>
+  <body class="bodySlide">
     <header>
       <nav class ="nav1" >
         <a href="#"><img src="images/TZ_logo.2022-768x218.png" class="logo"></a>
-        <input type="search" class="search">
+        <input type="search" class="search" id="#search">
         <ul class="options">
         <li><div class="icon-cart">
           <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 20">
@@ -20,20 +20,21 @@
           </svg>
           <span>0</span>
       </div></li>
-        <li><a href=""><img src="images/User.png" class="user" alt=""></a></li>
+        <li><a href="/login.html"><img src="images/User.png" class="user" alt=""></a></li>
       </ul>
       </nav>
         <nav>
          
         </nav>
-      <article class="support">
-        <ul>
-          <li><img src="images/Feature.png"></li>
-          <li><img src="images/Feature-1.png"></li>
-          <li><img src="images/Feature-2.png"></li>
-          <li><img src="images/Feature-3.png"></li>
-        </ul>
-      </article>
+        <div class="slider-container">
+          <div class="slider">
+              <div class="slide slide1"></div>
+              <div class="slide slide2"></div>
+              <div class="slide slide3"></div>
+          </div>
+          <button class="prev buttonSlide" onclick="prevSlide()">&#10094;</button>
+          <button class="next buttonSlide" onclick="nextSlide()">&#10095;</button>
+      </div>
     </header>
     
 
@@ -44,13 +45,13 @@
         <div class="title">PRODUCT LIST</div>
         
         </div>
-    <div class="listProduct">
+    <div class="items">
 
     </div>
 </div>
-<div class="cartTab">
+<div class="cartBox">
     <h1>Shopping Cart</h1>
-    <div class="listCart">
+    <div class="cart">
         
     </div>
     <div class="btn">
