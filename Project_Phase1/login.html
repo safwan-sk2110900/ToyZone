@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ToyZone QA - where imagination come to play</title>
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="styles.css">
+    
 
 </head>
 
@@ -16,12 +18,18 @@
 <section class="body">
 <signin class="loginpage">
         
-        <form class="form5">
+        <form class="form5" id ="form5">
         <h1><b> Welcome to ToyZone</b></h1> 
         <h4> Login to your registered account</h4> <br>
+        <select class="form-select" id="userType">
+            <option value ="0"selected>Select User</option>
+            <option value="1">Customer</option>
+            <option value="2">Seller</option>
+            <option value="3">Admin</option>
+        </select>
         
-        <input for="" type="text" style="height:40px "  placeholder="   Username/ Mobile/Email"><br>
-        <input for="" type="password" style="height:40px" placeholder="   Password">
+        <input for="" type="text" id = 'username'style="height:40px "  placeholder="   Username/ Mobile/Email"><br>
+        <input for="" type="password" id = 'password' style="height:40px" placeholder="   Password">
    
         <section id="rf">
      
@@ -31,7 +39,7 @@
         <a href=""> Forgot password ?</a>
         </section>
         
-        <button style="height:40px "> <b>LOGIN</b></button> <br>
+        <button style="height:40px " type="submit"> <b>LOGIN</b></button> <br>
         <h5> Do not have an account ? <a href=""> Register Now</a></h5>
         
         </form>
@@ -42,5 +50,7 @@
     
 </signin>
 </section>
+<script src="/js/login.js">
+    </script>
 </body>
 </html>

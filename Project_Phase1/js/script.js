@@ -1,4 +1,4 @@
-//Features handling
+//Features handling - slides
 let slideIndex = 0;
 
 function showSlide(index) {
@@ -28,7 +28,7 @@ setInterval(nextSlide, 3000);
 
 
 
-
+//----------------------------------------------------------------------------------------------------------------------
 
 //Products, items, shopping cart
 let itemList = document.querySelector('.items');
@@ -139,20 +139,20 @@ cartList.addEventListener('click', (event) => {
     }
 })
 const changeQuantityCart = (product_id, type) => {
-    let positionItemInCart = cart.findIndex((value) => value.product_id == product_id);
-    if(positionItemInCart >= 0){
-        let info = cart[positionItemInCart];
+    let itemPostition = cart.findIndex((value) => value.product_id == product_id);
+    if(itemPostition >= 0){
+        let info = cart[itemPostition];
         switch (type) {
             case 'plus':
-                cart[positionItemInCart].quantity = cart[positionItemInCart].quantity + 1;
+                info.quantity = info.quantity + 1;
                 break;
         
             default:
-                let changeQuantity = cart[positionItemInCart].quantity - 1;
+                let changeQuantity = info.quantity - 1;
                 if (changeQuantity > 0) {
-                    cart[positionItemInCart].quantity = changeQuantity;
+                    info.quantity = changeQuantity;
                 }else{
-                    cart.splice(positionItemInCart, 1);
+                    cart.splice(itemPostition, 1);
                 }
                 break;
         }
@@ -212,6 +212,10 @@ function displayItems(items) {
     itemList.appendChild(newProduct);
   });
 }
+
+//----------------------------------------------------------------------------------------------------------------------
+//Login Users
+
 
 
 

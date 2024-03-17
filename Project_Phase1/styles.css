@@ -117,11 +117,11 @@ border-radius: 2px;
 }
 
 .slide1 { background-image: url("/images/Slide1.jpg");
-background-size: cover; }
+background-size:contain; }
 .slide2 { background-image: url("/images/Slide2.jpg");
-    background-size: cover; }
+    background-size: contain; }
 .slide3 { background-image: url("/images/Slide3.jpg");
-    background-size: cover; }
+    background-size: contain; }
 
 .buttonSlide {
     position: absolute;
@@ -300,6 +300,11 @@ body.showCart .container{
 /* -------------------------------------------------------------------------------------------------------------------------- */
 
 body{background-image: url("../images/beige.jpg");}
+.form-select{
+    width:60%;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
 
 .loginpage{
     width: 80%;

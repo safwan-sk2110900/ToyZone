@@ -1,0 +1,71 @@
+{
+    "customers":[
+        {
+            "name":"Ahmed",
+            "surname":"Jassim",
+            "shipping":"123 street, Rayyan",
+            "username":"ak2143",
+            "password":"pass321",
+            "balance":50.0
+        },
+        {
+            "name":"Samir",
+            "surname":"Jaffer",
+            "shipping":"123 street, Doha",
+            "username":"sk2173",
+            "password":"pass321",
+            "balance":500.0
+        },
+        {
+            "name":"Rick",
+            "surname":"Joseph",
+            "shipping":"1234 street, Adelaide",
+            "username":"rem2143",
+            "password":"power21",
+            "balance":250.0
+        }
+
+    ],
+    "sellers":[
+        {
+            "companyName":"ToysUltimate",
+            "username":"test123",
+            "password":"pass321",
+            "account":0
+        },
+        {
+            "companyName":"ToysPro",
+            "username":"testPro123",
+            "password":"pass321",
+            "account":0
+        },
+        {
+            "companyName":"ToysRUs",
+            "username":"testUs123",
+            "password":"power21",
+            "account":0
+        }
+
+
+    ],
+    "admins":[
+        {
+           
+            "username":"admin1",
+            "password":"pass321"
+           
+        },
+        {
+            
+            "username":"admin2",
+            "password":"pass321"
+        },
+        {
+            
+            "username":"admin3",
+            "password":"power21"
+        }
+
+    ]
+
+}
