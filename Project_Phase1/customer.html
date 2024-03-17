@@ -6,7 +6,18 @@
     <title>ToyZone</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
     <link rel="stylesheet" href="styles.css" />
-    
+    <style>
+        #nameDisplay{
+            text-decoration: none;
+            font-weight: bolder;
+            color: red;
+            text-shadow: 10px;
+            display: block;
+            background-color:bisque;
+            padding: 20px;
+            border-radius: 30px;
+        }
+    </style>
   </head>
 
   <body class="bodySlide">
@@ -21,7 +32,7 @@
           </svg>
           <span>0</span>
       </div></li>
-        <li><a href="/login.html"><img src="images/User.png" class="user" alt=""></a></li>
+        <li ><a href="" id="nameDisplay"><img src="images/User.png" class="user" alt=""></a></li>
       </ul>
       </nav>
         <nav>
@@ -110,11 +121,14 @@
 
 </footer>
 
-    
-  <script src="/js/script.js"></script>
-  <script>
-    localStorage.removeItem('username')
+<script>
+    var username = localStorage.getItem('username')
+    const nameDisplay = document.getElementById('nameDisplay')
+    nameDisplay.textContent = 'Welcome, '+username
+
   </script>
+  <script src="/js/script.js"></script>
+  
   </body>
   
 </html>

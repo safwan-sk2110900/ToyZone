@@ -34,7 +34,15 @@ function checkLogin(username,password,users,type){
             alert("Invalid Username/Password")
         }
         else{
-            window.location.href = "index.html"
+            localStorage.setItem('username',username)
+            switch(type){
+                case "1":{    
+                window.location.href = "customer.html";break}
+                case "2": {window.location.href = "seller.html";break}
+                case "3": {window.location.href = "admin.html";break}
+            }
+            
+           
         }
     }
 }

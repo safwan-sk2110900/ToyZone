@@ -1,3 +1,9 @@
+//Initial calls
+
+
+
+
+
 //Features handling - slides
 let slideIndex = 0;
 
@@ -214,7 +220,17 @@ function displayItems(items) {
 }
 
 //----------------------------------------------------------------------------------------------------------------------
-//Login Users
+//Login Verification so customer can checkout
+function isLoggedIn(){
+var username = localStorage.getItem('username')
+if(username){
+    window.location.href="checkout.html"
+
+}
+else{
+    window.location.href = "login.html"
+}
+}
 
 
 
