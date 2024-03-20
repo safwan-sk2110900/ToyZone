@@ -42,7 +42,7 @@ let cartList = document.querySelector('.cart');
 let iconCart = document.querySelector('.icon-cart');
 let iconCartSpan = document.querySelector('.icon-cart span');
 let body = document.querySelector('body');
-let closeCart = document.querySelector('.close');
+let cartClose = document.querySelector('.close');
 let items = [];
 let cart = [];
 
@@ -50,26 +50,29 @@ let cart = [];
 iconCart.addEventListener('click', () => {
     body.classList.toggle('showCart');
 })
-closeCart.addEventListener('click', () => {
+cartClose.addEventListener('click', () => {
     body.classList.toggle('showCart');
 })
 
-    const addDataToHTML = () => {
+    const addToHTML = () => {
     // remove datas default from HTML
 
         // add new datas
         if(items.length > 0) // if has data
         {
-            items.forEach(product => {
-                let newProduct = document.createElement('div');
-                newProduct.dataset.id = product.id;
-                newProduct.classList.add('item');
-                newProduct.innerHTML = 
-                `<img src="${product.image}" alt="">
-                <h2>${product.name}</h2>
-                <div class="price">$${product.price}</div>
-                <button class="addCart">Add To Cart</button>`;
-                itemList.appendChild(newProduct);
+            items.forEach(item => {
+                let newItem = document.createElement('div');
+                newItem.dataset.id = item.id;
+                newItem.classList.add('card');
+                newItem.classList.add('card-body');
+                newItem.innerHTML = 
+                `<img src="${item.image}" alt="">
+                <h2 class="card-title">${item.name}</h2>
+                <div class="price">$${item.price}</div>
+                <p class="card-text">${item.desc}</p>
+                <button class="addCart btn btn-primary">Add To Cart</button>
+                `;
+                itemList.appendChild(newItem);
             });
         }
     }
@@ -174,7 +177,7 @@ const initApp = () => {
   .then(data => {
     // Display all items initially
     items = data
-    addDataToHTML()
+    addToHTML()
 
     // get data cart from memory
     if(localStorage.getItem('cart')){
