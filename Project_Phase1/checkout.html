@@ -186,9 +186,9 @@
               </div>
               <!-- Checkout -->
               <div class="card shadow-0 border summary">
-                <ul class="cart">
-                  
-                </ul>
+                <div id = "cartItems" class = "cartItems">
+
+                </div>
               </div>
             </div>
           
@@ -250,9 +250,48 @@
         nameDisplay.textContent = username
         const cartString = localStorage.getItem('cart')
         const cart = JSON.parse(cartString)
-        let cartList = document.querySelector('.cart');
+        var cartItems = document.querySelector('.cartItems')
+        let items = []
+        fetch('items.json')
+        .then(response => response.json())
+        .then(data => {
+        // Display all items initially
+        items = data
+      })
 
-        cartList.innerHTML = `<li>${cart[0]}</li>`
+      const addCartToHTML = () => {
+    cartItems.innerHTML = '';
+    let totalQuantity = 0;
+    if(cart.length > 0){
+        cart.forEach(item => {
+            totalQuantity = totalQuantity +  item.quantity;
+            let newItem = document.createElement('div');
+            newItem.classList.add('item');
+            newItem.dataset.id = item.product_id;
+
+            let positionProduct = items.findIndex((value) => value.id == item.product_id);
+            let info = items[positionProduct];
+            cartItems.appendChild(newItem);
+            newItem.innerHTML = `
+            <div class="image">
+                    <img src="${info.image}">
+                </div>
+                <div class="name">
+                ${info.name}
+                </div>
+                <div class="totalPrice">$${info.price * item.quantity}</div>
+                <div class="quantity">
+                    <span class="minus"><</span>
+                    <span>${item.quantity}</span>
+                    <span class="plus">></span>
+                </div>
+            `;
+        })
+    }
+}
+addCartToHTML()
+
+
 
 
 
